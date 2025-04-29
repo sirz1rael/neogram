@@ -1,18 +1,26 @@
 #pragma once
 
-#include <gtkmm/headerbar.h>
-#include <gtkmm/window.h>
+#include <glibmm/refptr.h>
+#include <gtkmm.h>
+#include <gtkmm/buildable.h>
+#include <gtkmm/button.h>
 
 class LoginWindow : public Gtk::Window {
-public:    
+public:
     LoginWindow();
     ~LoginWindow() override;
-    protected:
-    Gtk::HeaderBar w_header;
-
 private:
-    struct {
-        int width = 600;
-        int height = 400;
-    } wndSize;
+    Gtk::HeaderBar w_headerbar;
+    Gtk::MenuButton* country_button = nullptr;
+    Gtk::Entry* phone_number = nullptr;
+    Gtk::Button* next_button = nullptr;
+
+    Gtk::Button* theme_btn = nullptr;
+
+    Glib::RefPtr<Gtk::Builder> builder {};
+    Glib::RefPtr<Gtk::Settings> settings {};
+    Glib::RefPtr<Gtk::CssProvider> css_provider {};
+
+    void toggle_theme();
+    bool m_dark_theme = false;
 };

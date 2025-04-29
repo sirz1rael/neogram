@@ -282,7 +282,8 @@
 			[
 				0,
 				1,
-				2
+				2,
+				3
 			]
 		}
 	],
@@ -403,7 +404,8 @@
 			[
 				0,
 				1,
-				2
+				2,
+				3
 			]
 		}
 	],
@@ -412,7 +414,13 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "src/login_widget.cpp",
+			"path" : "src/extra.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/login_window.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
@@ -424,7 +432,7 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "src/window.cpp",
+			"path" : "src/main_window.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],

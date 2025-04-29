@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<interface>
+  <requires lib="gtk" version="4.12" />
+  <object class="GtkWindow" id="login_window">
+    <property name="default-height">400</property>
+    <property name="default-width">600</property>
+    <child>
+      <!-- Главный контейнер с центрированием -->
+      <object class="GtkBox" id="root_container">
+        <property name="orientation">vertical</property>
+        <property name="halign">center</property>
+        <property name="valign">center</property>
+        <property name="hexpand">true</property>
+        <property name="vexpand">true</property>
+        <child>
+          <object class="GtkBox" id="buttons_box">
+            <property name="orientation">vertical</property>
+            <property name="spacing">12</property>
+            <property name="margin-top">20</property>
+            <property name="margin-bottom">20</property>
+            <child>
+              <object class="GtkMenuButton" id="country_button">
+                <property name="label">Country</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkEntry" id="phone_number">
+                <property name="placeholder-text">Phone number</property>
+                <property name="width-request">200</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkButton" id="next_button">
+                <property name="icon-name">go-next-symbolic</property>
+                <property name="label">Next</property>
+                <property name="css-classes">custom-btn</property>
+              </object>
+            </child>
+          </object>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>
