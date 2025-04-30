@@ -2,6 +2,7 @@
 #include "extra.h"
 #include <exception>
 #include <gtkmm/enums.h>
+#include <gtkmm/label.h>
 #include <gtkmm/menubutton.h>
 #include <gtkmm/object.h>
 #include <iostream>
@@ -29,21 +30,14 @@ LoginWindow::LoginWindow() {
 
     // Getting widgets
     country_button = builder->get_widget<Gtk::MenuButton>("country_button");
-    auto countries_list = Gio::Menu::create();
-
-    countries_list->append("Russia (+7)", "phone.7");
-    countries_list->append("USA (+1)", "phone.1");
-
-    country_button->set_menu_model(countries_list);
-
     phone_number = builder->get_widget<Gtk::Entry>("phone_number");
+    next_button = builder->get_widget<Gtk::Button>("next_button");
+
+    // Maybe it will be transferred to .ui file
     phone_number->set_input_purpose(Gtk::InputPurpose::PHONE);
     phone_number->set_max_length(15);
 
-    next_button = builder->get_widget<Gtk::Button>("next_button");
-
-
-
+    // WIP: Next button request to the server for authorization
     next_button->signal_clicked().connect([this]() {
         if(phone_number->get_text() != "") {
             std::cout << phone_number->get_text() << std::endl;
@@ -52,19 +46,25 @@ LoginWindow::LoginWindow() {
         } 
     });
 
+    // WIP: Phone codes depending on country
+    auto countries_list = Gio::Menu::create();
+    countries_list->append("Russia (+7)", "phone.7");
+    countries_list->append("USA (+1)", "phone.1");
+    country_button->set_menu_model(countries_list);
+
+    // WIP: Theme button, just for sexy look
     theme_btn = Gtk::make_managed<Gtk::Button>();
     theme_btn->set_icon_name("weather-clear-night-symbolic");
     theme_btn->set_tooltip_text("Toggle Dark Theme");
-
     theme_btn->signal_clicked().connect(
         sigc::mem_fun(*this, &LoginWindow::toggle_theme)
     );
-
     w_headerbar.pack_start(*theme_btn);
     
+
     set_title("Neogram");
     set_titlebar(w_headerbar);
-    set_default_size(400, 500);
+    set_default_size(400, 600);
     set_resizable(false);
 }
 

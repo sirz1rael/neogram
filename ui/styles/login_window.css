@@ -14,6 +14,7 @@
 /* Общий контейнер */
 .combo-box {
   border-radius: 8px;
+  margin-top: 25px;
 }
 
 /* Стиль кнопки */
@@ -35,4 +36,28 @@
 .combo-button:focus, 
 .combo-entry:focus {
   box-shadow: none;
+}
+
+
+.greeting-text {
+  font-size: 18pt;
+  font-weight: 700;
+}
+
+.greeting-icon {
+  min-width: 128px;
+  min-height: 128px;
+}
+
+.qr-button {
+  margin-top: 20px;
+  background: none;
+}
+
+.qr-button-label {
+  color: #3584e4;
+}
+
+.qr-button-label:hover {
+  text-decoration: underline;
 }

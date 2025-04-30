@@ -15,9 +15,21 @@
         <child>
           <object class="GtkBox" id="buttons_box">
             <property name="orientation">vertical</property>
-            <property name="spacing">12</property>
-            <property name="margin-top">20</property>
+            <property name="spacing">15</property>
+            <property name="margin-top">0</property>
             <property name="margin-bottom">20</property>
+            <child>
+              <object class="GtkImage">
+                <property name="file">/home/t0kkaaa/projects/tg_gtk4/ui/assets/icons/telegram.png</property>
+                <property name="css-classes">greeting-icon</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkLabel" id="greeting">
+                <property name="label">Welcome to Neogram!</property>
+                <property name="css-classes">greeting-text</property>
+              </object>
+            </child>
             <child>
               <object class="GtkBox" id="combo_box">
                 <property name="orientation">horizontal</property>
@@ -42,8 +54,21 @@
             <child>
               <object class="GtkButton" id="next_button">
                 <property name="icon-name">go-next-symbolic</property>
-                <property name="label">Next</property>
+                <property name="label">Start messaging</property>
                 <property name="css-classes">custom-btn</property>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="GtkButton" id="qr_button">
+            <property name="icon-name">go-next-symbolic</property>
+            <property name="label"></property>
+            <property name="css-classes">qr-button</property>
+            <child>
+              <object class="GtkLabel" id="qr_button_label">
+                <property name="label">or login quickly with QR code</property>
+                <property name="css-classes">qr-button-label</property>
               </object>
             </child>
           </object>
