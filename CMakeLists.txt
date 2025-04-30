@@ -9,6 +9,7 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 add_compile_options(-Wall -Wextra)
 
 file(GLOB_RECURSE SOURCES "src/*.cpp")
+file(GLOB_RECURSE HEADERS "include/*.h" "include/*.hpp")
 
 find_package(Td 1.8.47 REQUIRED COMPONENTS 
     tdjson 
@@ -17,6 +18,8 @@ find_package(Td 1.8.47 REQUIRED COMPONENTS
     tdactor
     tdutils
 )
+
+find_package(CURL REQUIRED)
 
 find_package(PkgConfig REQUIRED)
 pkg_check_modules(GTKMM REQUIRED IMPORTED_TARGET gtkmm-4.0)
@@ -32,6 +35,7 @@ add_executable(${PROJECT_NAME}
 target_include_directories(${PROJECT_NAME}
     PUBLIC 
         ${PROJECT_SOURCE_DIR}/include
+        ${PROJECT_SOURCE_DIR}/include/nlohmann
 )
 
 target_link_libraries(${PROJECT_NAME}
@@ -48,4 +52,6 @@ target_link_libraries(${PROJECT_NAME}
         ssl
         crypto
         z
+    PRIVATE
+        ${CURL_LIBRARIES}
 )

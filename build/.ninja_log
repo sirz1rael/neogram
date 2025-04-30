@@ -1,0 +1,7 @@
+# ninja log v6
+1	34	1746054523502922227	CMakeFiles/Neogram.dir/src/api_client.cpp.o	85de80dd302b8adf
+2	1226	1746054523502922227	CMakeFiles/Neogram.dir/src/main_window.cpp.o	c355615548345b8c
+1	1763	1746054523502922227	CMakeFiles/Neogram.dir/src/extra.cpp.o	c9e40d99995f257
+2	1871	1746054523502922227	CMakeFiles/Neogram.dir/src/main.cpp.o	7b3b51b0647878cf
+2	1906	1746054523502922227	CMakeFiles/Neogram.dir/src/login_window.cpp.o	838941bd1820542c
+1906	2164	1746054525406226723	Neogram	a8c2b81b970adaad

@@ -1,7 +1,7 @@
 
+#include "enums.h"
 #include "login_window.h"
 #include "main_window.h"
-#include "states.h"
 
 #include <gtkmm.h>
 

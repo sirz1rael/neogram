@@ -3,15 +3,13 @@
 #include <cstdlib>
 #include <iostream>
 
-Glib::RefPtr<Gtk::Builder> Extra::load_builder(std::string path_to_file) {
-  this->builder = Gtk::Builder::create();
+Glib::RefPtr<Gtk::Builder> Extra::load_builder(const std::string &ui_path) {
   try {
-    builder->add_from_file(path_to_file);
-  } catch (const Glib::FileError &ex) {
-    std::cerr << "FileError: " << ex.what() << std::endl;
+    return Gtk::Builder::create_from_file(ui_path);
+  } catch (const Glib::Error &e) {
+    g_critical("Error loading UI file: %s", e.what());
+    return nullptr;
   }
-
-  return this->builder;
 }
 
 Glib::RefPtr<Gtk::CssProvider> Extra::load_styles(std::string path_to_file) {

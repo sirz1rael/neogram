@@ -5,7 +5,7 @@
 
 class Extra {
 public:
-  Glib::RefPtr<Gtk::Builder> load_builder(std::string path_to_file);
+  Glib::RefPtr<Gtk::Builder> load_builder(const std::string &ui_path);
   Glib::RefPtr<Gtk::CssProvider> load_styles(std::string path_to_file);
 
 private:

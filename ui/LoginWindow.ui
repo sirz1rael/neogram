@@ -1,76 +1,130 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <interface>
-  <requires lib="gtk" version="4.12" />
+  <requires lib="gtk" version="4.12"/>
   <object class="GtkWindow" id="login_window">
-    <property name="default-height">400</property>
-    <property name="default-width">600</property>
     <child>
-      <!-- Главный контейнер с центрированием -->
-      <object class="GtkBox" id="root_container">
-        <property name="orientation">vertical</property>
+      <!-- Заменяем root_container на GtkStack -->
+      <object class="GtkStack" id="main_stack">
         <property name="halign">center</property>
         <property name="valign">center</property>
         <property name="hexpand">true</property>
         <property name="vexpand">true</property>
+        <property name="transition-type">slide-left-right</property>
+
+        <!-- Первая страница (логин) -->
         <child>
-          <object class="GtkBox" id="buttons_box">
-            <property name="orientation">vertical</property>
-            <property name="spacing">15</property>
-            <property name="margin-top">0</property>
-            <property name="margin-bottom">20</property>
-            <child>
-              <object class="GtkImage">
-                <property name="file">/home/t0kkaaa/projects/tg_gtk4/ui/assets/icons/telegram.png</property>
-                <property name="css-classes">greeting-icon</property>
-              </object>
-            </child>
-            <child>
-              <object class="GtkLabel" id="greeting">
-                <property name="label">Welcome to Neogram!</property>
-                <property name="css-classes">greeting-text</property>
-              </object>
-            </child>
-            <child>
-              <object class="GtkBox" id="combo_box">
-                <property name="orientation">horizontal</property>
-                <property name="spacing">0</property> <!-- Убираем промежуток -->
-                <property name="css-classes">combo-box</property>
+          <object class="GtkStackPage">
+            <property name="child">
+              <object class="GtkBox" id="login_page">
+                <property name="orientation">vertical</property>
+                <!-- Переносим содержимое из старого root_container -->
                 <child>
-                  <object class="GtkMenuButton" id="country_button">
-                    <property name="label">Country</property>
-                    <property name="icon-name">globe-symbolic</property>
-                    <property name="css-classes">combo-button</property>
+                  <object class="GtkBox" id="buttons_box">
+                    <property name="orientation">vertical</property>
+                    <property name="spacing">15</property>
+                    <property name="margin-top">0</property>
+                    <property name="margin-bottom">20</property>
+                    <child>
+                      <object class="GtkImage">
+                        <property name="file">ui/assets/icons/telegram.png</property>
+                        <property name="css-classes">greeting-icon</property>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="greeting">
+                        <property name="label">Welcome to Neogram!</property>
+                        <property name="css-classes">greeting-text</property>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkBox" id="combo_box">
+                        <property name="orientation">horizontal</property>
+                        <property name="spacing">0</property> <!-- Убираем промежуток -->
+                        <property name="css-classes">combo-box</property>
+                        <child>
+                          <object class="GtkMenuButton" id="country_button">
+                            <property name="label">Country</property>
+                            <property name="icon-name">globe-symbolic</property>
+                            <property name="css-classes">combo-button</property>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="GtkEntry" id="phone_number">
+                            <property name="placeholder-text">Phone number</property>
+                            <property name="css-classes">combo-entry</property>
+                            <property name="hexpand">true</property>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="next_button">
+                        <property name="icon-name">go-next-symbolic</property>
+                        <property name="label">Start messaging</property>
+                        <property name="css-classes">custom-btn</property>
+                      </object>
+                    </child>
                   </object>
                 </child>
                 <child>
-                  <object class="GtkEntry" id="phone_number">
-                    <property name="placeholder-text">Phone number</property>
-                    <property name="css-classes">combo-entry</property>
-                    <property name="hexpand">true</property>
+                  <object class="GtkButton" id="qr_button">
+                    <property name="icon-name">go-next-symbolic</property>
+                    <property name="label"></property>
+                    <property name="css-classes">qr-button</property>
+                    <child>
+                      <object class="GtkLabel" id="qr_button_label">
+                        <property name="label">or login quickly with QR code</property>
+                        <property name="css-classes">qr-button-label</property>
+                      </object>
+                    </child>
                   </object>
                 </child>
               </object>
-            </child>
-            <child>
-              <object class="GtkButton" id="next_button">
-                <property name="icon-name">go-next-symbolic</property>
-                <property name="label">Start messaging</property>
-                <property name="css-classes">custom-btn</property>
+            </property>
+            <property name="name">main_login_page</property>
+          </object>
+        </child>
+
+        <!-- Вторая страница (2FA) -->
+        <child>
+          <object class="GtkStackPage">
+            <property name="child">
+              <object class="GtkBox" id="auth_page">
+                <property name="orientation">vertical</property>
+                <property name="spacing">15</property>
+                <property name="margin-top">0</property>
+                <property name="margin-bottom">20</property>
+                
+                <child>
+                  <object class="GtkLabel">
+                    <property name="label">Enter 2FA Code</property>
+                    <property name="css-classes">greeting-text</property>
+                  </object>
+                </child>
+                
+                <child>
+                  <object class="GtkEntry" id="2fa_code">
+                    <property name="placeholder-text">6-digit code</property>
+                  </object>
+                </child>
+                
+                <child>
+                  <object class="GtkButton" id="verify_button">
+                    <property name="label">Verify Code</property>
+                    <property name="css-classes">custom-btn</property>
+                  </object>
+                </child>
               </object>
-            </child>
+            </property>
+            <property name="name">2fa_login_page</property>
           </object>
         </child>
         <child>
-          <object class="GtkButton" id="qr_button">
-            <property name="icon-name">go-next-symbolic</property>
-            <property name="label"></property>
-            <property name="css-classes">qr-button</property>
-            <child>
-              <object class="GtkLabel" id="qr_button_label">
-                <property name="label">or login quickly with QR code</property>
-                <property name="css-classes">qr-button-label</property>
-              </object>
-            </child>
+          <object class="GtkStackPage">
+            <property name="child">
+              <object class="GtkBox"></object>
+            </property>
+            <property name="name">qr_login_page</property>
           </object>
         </child>
       </object>

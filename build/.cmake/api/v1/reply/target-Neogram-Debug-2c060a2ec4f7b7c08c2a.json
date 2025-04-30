@@ -38,25 +38,25 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 28,
+				"line" : 31,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 25,
+				"line" : 28,
 				"parent" : 0
 			},
 			{
 				"command" : 2,
 				"file" : 0,
-				"line" : 37,
+				"line" : 41,
 				"parent" : 0
 			},
 			{
 				"command" : 6,
 				"file" : 0,
-				"line" : 22,
+				"line" : 25,
 				"parent" : 0
 			},
 			{
@@ -80,7 +80,7 @@
 			{
 				"command" : 9,
 				"file" : 0,
-				"line" : 13,
+				"line" : 14,
 				"parent" : 0
 			},
 			{
@@ -130,7 +130,7 @@
 			{
 				"command" : 11,
 				"file" : 0,
-				"line" : 32,
+				"line" : 35,
 				"parent" : 0
 			}
 		]
@@ -173,6 +173,10 @@
 				{
 					"backtrace" : 17,
 					"path" : "/home/t0kkaaa/projects/tg_gtk4/include"
+				},
+				{
+					"backtrace" : 17,
+					"path" : "/home/t0kkaaa/projects/tg_gtk4/include/nlohmann"
 				},
 				{
 					"backtrace" : 3,
@@ -336,7 +340,8 @@
 				0,
 				1,
 				2,
-				3
+				3,
+				4
 			]
 		}
 	],
@@ -410,6 +415,11 @@
 			{
 				"backtrace" : 3,
 				"fragment" : "-lz",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 3,
+				"fragment" : "/usr/lib/libcurl.so",
 				"role" : "libraries"
 			},
 			{
@@ -586,12 +596,19 @@
 				0,
 				1,
 				2,
-				3
+				3,
+				4
 			]
 		}
 	],
 	"sources" : 
 	[
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/api_client.cpp",
+			"sourceGroupIndex" : 0
+		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
