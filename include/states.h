@@ -1,6 +1,6 @@
 #pragma once
 
-enum class WindowState {
+enum class ClientState {
     UNAUTHORIZED,
     AUTHORIZED
     //... idk

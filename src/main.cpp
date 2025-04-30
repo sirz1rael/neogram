@@ -1,7 +1,7 @@
 
 #include "main_window.h"
 #include "login_window.h"
-#include "window_states.h"
+#include "states.h"
 
 #include <gtkmm.h>
 
@@ -11,12 +11,12 @@ int main(int argc, char* argv[]) {
 
     auto app = Gtk::Application::create("org.neogram");
     
-    auto windowState = WindowState::UNAUTHORIZED; // Temporary placeholder for authorization :D
+    auto windowState = ClientState::UNAUTHORIZED; // Temporary placeholder for authorization :D
 
     switch (windowState) {
-        case WindowState::AUTHORIZED:
+        case ClientState::AUTHORIZED:
             return app->make_window_and_run<MainWindow>(argc, argv);
-        case WindowState::UNAUTHORIZED:
+        case ClientState::UNAUTHORIZED:
             return app->make_window_and_run<LoginWindow>(argc, argv);
     }
 }   

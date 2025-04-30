@@ -11,18 +11,24 @@
 		"commands" : 
 		[
 			"add_executable",
+			"link_directories",
+			"target_link_libraries",
 			"set_property",
 			"_pkg_create_imp_target",
 			"_pkg_recalculate",
 			"pkg_check_modules",
+			"set_target_properties",
+			"include",
+			"find_package",
 			"add_compile_options",
-			"target_link_libraries",
 			"target_include_directories"
 		],
 		"files" : 
 		[
 			"CMakeLists.txt",
-			"/usr/share/cmake/Modules/FindPkgConfig.cmake"
+			"/usr/share/cmake/Modules/FindPkgConfig.cmake",
+			"/usr/local/lib/cmake/Td/TdStaticTargets.cmake",
+			"/usr/local/lib/cmake/Td/TdConfig.cmake"
 		],
 		"nodes" : 
 		[
@@ -32,49 +38,99 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 16,
+				"line" : 28,
 				"parent" : 0
-			},
-			{
-				"command" : 4,
-				"file" : 0,
-				"line" : 13,
-				"parent" : 0
-			},
-			{
-				"command" : 3,
-				"file" : 1,
-				"line" : 877,
-				"parent" : 2
-			},
-			{
-				"command" : 2,
-				"file" : 1,
-				"line" : 361,
-				"parent" : 3
 			},
 			{
 				"command" : 1,
-				"file" : 1,
-				"line" : 342,
-				"parent" : 4
+				"file" : 0,
+				"line" : 25,
+				"parent" : 0
 			},
 			{
-				"command" : 5,
+				"command" : 2,
 				"file" : 0,
-				"line" : 7,
+				"line" : 37,
 				"parent" : 0
 			},
 			{
 				"command" : 6,
 				"file" : 0,
-				"line" : 28,
+				"line" : 22,
 				"parent" : 0
 			},
 			{
-				"command" : 7,
+				"command" : 5,
+				"file" : 1,
+				"line" : 877,
+				"parent" : 4
+			},
+			{
+				"command" : 4,
+				"file" : 1,
+				"line" : 361,
+				"parent" : 5
+			},
+			{
+				"command" : 3,
+				"file" : 1,
+				"line" : 342,
+				"parent" : 6
+			},
+			{
+				"command" : 9,
 				"file" : 0,
-				"line" : 21,
+				"line" : 13,
+				"parent" : 0
+			},
+			{
+				"file" : 3,
+				"parent" : 8
+			},
+			{
+				"command" : 8,
+				"file" : 3,
+				"line" : 7,
+				"parent" : 9
+			},
+			{
+				"file" : 2,
+				"parent" : 10
+			},
+			{
+				"command" : 7,
+				"file" : 2,
+				"line" : 129,
+				"parent" : 11
+			},
+			{
+				"command" : 7,
+				"file" : 2,
+				"line" : 89,
+				"parent" : 11
+			},
+			{
+				"command" : 7,
+				"file" : 2,
+				"line" : 75,
+				"parent" : 11
+			},
+			{
+				"command" : 7,
+				"file" : 2,
+				"line" : 61,
+				"parent" : 11
+			},
+			{
+				"command" : 10,
+				"file" : 0,
+				"line" : 9,
+				"parent" : 0
+			},
+			{
+				"command" : 11,
+				"file" : 0,
+				"line" : 32,
 				"parent" : 0
 			}
 		]
@@ -85,199 +141,196 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "-g -std=c++20"
+					"fragment" : "-g -std=c++17"
 				},
 				{
-					"backtrace" : 6,
+					"backtrace" : 16,
 					"fragment" : "-Wall"
 				},
 				{
-					"backtrace" : 6,
+					"backtrace" : 16,
 					"fragment" : "-Wextra"
 				},
 				{
-					"backtrace" : 7,
+					"backtrace" : 3,
 					"fragment" : "-mfpmath=sse"
 				},
 				{
-					"backtrace" : 7,
+					"backtrace" : 3,
 					"fragment" : "-msse"
 				},
 				{
-					"backtrace" : 7,
+					"backtrace" : 3,
 					"fragment" : "-msse2"
 				},
 				{
-					"backtrace" : 7,
+					"backtrace" : 3,
 					"fragment" : "-pthread"
 				}
 			],
 			"includes" : 
 			[
 				{
-					"backtrace" : 8,
+					"backtrace" : 17,
 					"path" : "/home/t0kkaaa/projects/tg_gtk4/include"
 				},
 				{
-					"backtrace" : 7,
+					"backtrace" : 3,
 					"isSystem" : true,
 					"path" : "/usr/include/gtkmm-4.0"
 				},
 				{
-					"backtrace" : 7,
+					"backtrace" : 3,
 					"isSystem" : true,
 					"path" : "/usr/lib/gtkmm-4.0/include"
 				},
 				{
-					"backtrace" : 7,
+					"backtrace" : 3,
 					"isSystem" : true,
 					"path" : "/usr/include/pangomm-2.48"
 				},
 				{
-					"backtrace" : 7,
+					"backtrace" : 3,
 					"isSystem" : true,
 					"path" : "/usr/lib/pangomm-2.48/include"
 				},
 				{
-					"backtrace" : 7,
+					"backtrace" : 3,
 					"isSystem" : true,
 					"path" : "/usr/include/giomm-2.68"
 				},
 				{
-					"backtrace" : 7,
+					"backtrace" : 3,
 					"isSystem" : true,
 					"path" : "/usr/lib/giomm-2.68/include"
 				},
 				{
-					"backtrace" : 7,
+					"backtrace" : 3,
 					"isSystem" : true,
 					"path" : "/usr/include/glibmm-2.68"
 				},
 				{
-					"backtrace" : 7,
+					"backtrace" : 3,
 					"isSystem" : true,
 					"path" : "/usr/lib/glibmm-2.68/include"
 				},
 				{
-					"backtrace" : 7,
+					"backtrace" : 3,
 					"isSystem" : true,
 					"path" : "/usr/include/gio-unix-2.0"
 				},
 				{
-					"backtrace" : 7,
+					"backtrace" : 3,
 					"isSystem" : true,
 					"path" : "/usr/include/cairomm-1.16"
 				},
 				{
-					"backtrace" : 7,
+					"backtrace" : 3,
 					"isSystem" : true,
 					"path" : "/usr/lib/cairomm-1.16/include"
 				},
 				{
-					"backtrace" : 7,
+					"backtrace" : 3,
 					"isSystem" : true,
 					"path" : "/usr/include/sigc++-3.0"
 				},
 				{
-					"backtrace" : 7,
+					"backtrace" : 3,
 					"isSystem" : true,
 					"path" : "/usr/lib/sigc++-3.0/include"
 				},
 				{
-					"backtrace" : 7,
+					"backtrace" : 3,
 					"isSystem" : true,
 					"path" : "/usr/include/gtk-4.0/unix-print"
 				},
 				{
-					"backtrace" : 7,
+					"backtrace" : 3,
 					"isSystem" : true,
 					"path" : "/usr/include/gtk-4.0"
 				},
 				{
-					"backtrace" : 7,
+					"backtrace" : 3,
 					"isSystem" : true,
 					"path" : "/usr/include/pango-1.0"
 				},
 				{
-					"backtrace" : 7,
+					"backtrace" : 3,
 					"isSystem" : true,
 					"path" : "/usr/include/fribidi"
 				},
 				{
-					"backtrace" : 7,
+					"backtrace" : 3,
 					"isSystem" : true,
 					"path" : "/usr/include/harfbuzz"
 				},
 				{
-					"backtrace" : 7,
+					"backtrace" : 3,
 					"isSystem" : true,
 					"path" : "/usr/include/gdk-pixbuf-2.0"
 				},
 				{
-					"backtrace" : 7,
+					"backtrace" : 3,
 					"isSystem" : true,
 					"path" : "/usr/include/cairo"
 				},
 				{
-					"backtrace" : 7,
+					"backtrace" : 3,
 					"isSystem" : true,
 					"path" : "/usr/include/freetype2"
 				},
 				{
-					"backtrace" : 7,
+					"backtrace" : 3,
 					"isSystem" : true,
 					"path" : "/usr/include/libpng16"
 				},
 				{
-					"backtrace" : 7,
+					"backtrace" : 3,
 					"isSystem" : true,
 					"path" : "/usr/include/pixman-1"
 				},
 				{
-					"backtrace" : 7,
+					"backtrace" : 3,
 					"isSystem" : true,
 					"path" : "/usr/include/graphene-1.0"
 				},
 				{
-					"backtrace" : 7,
+					"backtrace" : 3,
 					"isSystem" : true,
 					"path" : "/usr/lib/graphene-1.0/include"
 				},
 				{
-					"backtrace" : 7,
+					"backtrace" : 3,
 					"isSystem" : true,
 					"path" : "/usr/include/glib-2.0"
 				},
 				{
-					"backtrace" : 7,
+					"backtrace" : 3,
 					"isSystem" : true,
 					"path" : "/usr/lib/glib-2.0/include"
 				},
 				{
-					"backtrace" : 7,
+					"backtrace" : 3,
 					"isSystem" : true,
 					"path" : "/usr/include/libmount"
 				},
 				{
-					"backtrace" : 7,
+					"backtrace" : 3,
 					"isSystem" : true,
 					"path" : "/usr/include/blkid"
 				},
 				{
-					"backtrace" : 7,
+					"backtrace" : 3,
 					"isSystem" : true,
 					"path" : "/usr/include/sysprof-6"
+				},
+				{
+					"backtrace" : 3,
+					"isSystem" : true,
+					"path" : "/.."
 				}
 			],
 			"language" : "CXX",
-			"languageStandard" : 
-			{
-				"backtraces" : 
-				[
-					1
-				],
-				"standard" : "20"
-			},
 			"sourceIndexes" : 
 			[
 				0,
@@ -297,93 +350,221 @@
 				"role" : "flags"
 			},
 			{
-				"backtrace" : 5,
+				"fragment" : "-lc++ -lc++abi",
+				"role" : "flags"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "-L/usr/local/lib",
+				"role" : "libraryPath"
+			},
+			{
+				"fragment" : "-Wl,-rpath,/usr/local/lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 3,
+				"fragment" : "/usr/local/lib/libtdjson.so.1.8.47",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 3,
+				"fragment" : "/usr/local/lib/libtdcore.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 3,
+				"fragment" : "/usr/local/lib/libtdutils.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 3,
+				"fragment" : "/usr/local/lib/libtdactor.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 3,
+				"fragment" : "/usr/local/lib/libtdclient.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 3,
+				"fragment" : "-lpthread",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 3,
+				"fragment" : "-ldl",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 3,
+				"fragment" : "-lssl",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 3,
+				"fragment" : "-lcrypto",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 3,
+				"fragment" : "-lz",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 7,
 				"fragment" : "/usr/lib/libgtkmm-4.0.so",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 5,
+				"backtrace" : 7,
 				"fragment" : "/usr/lib/libpangomm-2.48.so",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 5,
+				"backtrace" : 7,
 				"fragment" : "/usr/lib/libgiomm-2.68.so",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 5,
+				"backtrace" : 7,
 				"fragment" : "/usr/lib/libglibmm-2.68.so",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 5,
+				"backtrace" : 7,
 				"fragment" : "/usr/lib/libcairomm-1.16.so",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 5,
+				"backtrace" : 7,
 				"fragment" : "/usr/lib/libsigc-3.0.so",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 5,
+				"backtrace" : 7,
 				"fragment" : "/usr/lib/libgtk-4.so",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 5,
+				"backtrace" : 7,
 				"fragment" : "/usr/lib/libpangocairo-1.0.so",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 5,
+				"backtrace" : 7,
 				"fragment" : "/usr/lib/libpango-1.0.so",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 5,
+				"backtrace" : 7,
 				"fragment" : "/usr/lib/libgdk_pixbuf-2.0.so",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 5,
+				"backtrace" : 7,
 				"fragment" : "/usr/lib/libcairo-gobject.so",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 5,
+				"backtrace" : 7,
 				"fragment" : "/usr/lib/libcairo.so",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 5,
+				"backtrace" : 7,
 				"fragment" : "/usr/lib/libharfbuzz.so",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 5,
+				"backtrace" : 7,
 				"fragment" : "/usr/lib/libgraphene-1.0.so",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 5,
+				"backtrace" : 7,
 				"fragment" : "/usr/lib/libgio-2.0.so",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 5,
+				"backtrace" : 7,
 				"fragment" : "/usr/lib/libgobject-2.0.so",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 5,
+				"backtrace" : 7,
 				"fragment" : "/usr/lib/libglib-2.0.so",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 5,
+				"backtrace" : 7,
 				"fragment" : "/usr/lib/libvulkan.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 3,
+				"fragment" : "/usr/local/lib/libtdcore.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 12,
+				"fragment" : "/usr/local/lib/libtddb.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 13,
+				"fragment" : "/usr/local/lib/libtdsqlite.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 12,
+				"fragment" : "/usr/local/lib/libtde2e.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 12,
+				"fragment" : "/usr/local/lib/libtdmtproto.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 12,
+				"fragment" : "/usr/local/lib/libtdnet.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 3,
+				"fragment" : "/usr/local/lib/libtdactor.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 14,
+				"fragment" : "/usr/lib/libssl.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 12,
+				"fragment" : "/usr/local/lib/libtdapi.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 3,
+				"fragment" : "/usr/local/lib/libtdutils.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 15,
+				"fragment" : "/usr/lib/libcrypto.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 15,
+				"fragment" : "/usr/lib/libz.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 3,
+				"fragment" : "-ldl",
 				"role" : "libraries"
 			}
 		],

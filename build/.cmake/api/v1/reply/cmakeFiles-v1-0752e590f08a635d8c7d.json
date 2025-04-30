@@ -212,6 +212,35 @@
 			"path" : "/usr/share/cmake/Modules/Platform/Linker/Linux-GNU.cmake"
 		},
 		{
+			"isExternal" : true,
+			"path" : "/usr/local/lib/cmake/Td/TdConfigVersion.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/usr/local/lib/cmake/Td/TdConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/usr/local/lib/cmake/Td/TdTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/usr/local/lib/cmake/Td/TdTargets-release.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/usr/local/lib/cmake/Td/TdStaticTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/usr/local/lib/cmake/Td/TdStaticTargets-release.cmake"
+		},
+		{
 			"isCMake" : true,
 			"isExternal" : true,
 			"path" : "/usr/share/cmake/Modules/FindPkgConfig.cmake"

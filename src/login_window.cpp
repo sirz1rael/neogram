@@ -1,6 +1,7 @@
 #include "login_window.h"
 #include "extra.h"
 #include <exception>
+#include <gtkmm/enums.h>
 #include <gtkmm/menubutton.h>
 #include <gtkmm/object.h>
 #include <iostream>
@@ -28,8 +29,20 @@ LoginWindow::LoginWindow() {
 
     // Getting widgets
     country_button = builder->get_widget<Gtk::MenuButton>("country_button");
+    auto countries_list = Gio::Menu::create();
+
+    countries_list->append("Russia (+7)", "phone.7");
+    countries_list->append("USA (+1)", "phone.1");
+
+    country_button->set_menu_model(countries_list);
+
     phone_number = builder->get_widget<Gtk::Entry>("phone_number");
+    phone_number->set_input_purpose(Gtk::InputPurpose::PHONE);
+    phone_number->set_max_length(15);
+
     next_button = builder->get_widget<Gtk::Button>("next_button");
+
+
 
     next_button->signal_clicked().connect([this]() {
         if(phone_number->get_text() != "") {

@@ -1,37 +1,51 @@
 cmake_minimum_required(VERSION 3.22)
 project(Neogram)
 
-set(CMAKE_CXX_STANDARD 20)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(DCMAKE_CXX_STANDARD 17)
+set(DCMAKE_CXX_STANDARD_REQUIRED ON)
+set(DCMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} --stdlib=libc++")
+set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -lc++ -lc++abi")
 set(CMAKE_CXX_EXTENSIONS OFF)
 add_compile_options(-Wall -Wextra)
 
 file(GLOB_RECURSE SOURCES "src/*.cpp")
 
-# Ищем зависимости GTKMM
+find_package(Td 1.8.47 REQUIRED COMPONENTS 
+    tdjson 
+    tdcore
+    tdclient
+    tdactor
+    tdutils
+)
+
 find_package(PkgConfig REQUIRED)
 pkg_check_modules(GTKMM REQUIRED IMPORTED_TARGET gtkmm-4.0)
 
-# Создаем исполняемый файл
+include_directories(/usr/local/include)
+link_directories(/usr/local/lib)
+
+
 add_executable(${PROJECT_NAME}
     ${SOURCES}
 )
 
-# Добавляем include-директории
 target_include_directories(${PROJECT_NAME}
     PUBLIC 
         ${PROJECT_SOURCE_DIR}/include
-        # Если нужно добавить другие пути, можно указать здесь
 )
 
-# Линкуем зависимости
 target_link_libraries(${PROJECT_NAME}
     PRIVATE 
-        PkgConfig::GTKMM  # Используем импортированный таргет
+        PkgConfig::GTKMM 
+    PRIVATE
+        Td::tdjson
+        Td::tdcore
+        Td::tdutils
+        Td::tdactor
+        Td::tdclient
+        pthread
+        dl
+        ssl
+        crypto
+        z
 )
-
-# Для старых версий CMake (если PkgConfig::GTKMM не работает):
-# target_include_directories(${PROJECT_NAME} PRIVATE ${GTKMM_INCLUDE_DIRS})
-# target_link_directories(${PROJECT_NAME} PRIVATE ${GTKMM_LIBRARY_DIRS})
-# target_link_libraries(${PROJECT_NAME} ${GTKMM_LIBRARIES})
-# target_compile_options(${PROJECT_NAME} PRIVATE ${GTKMM_CFLAGS_OTHER})

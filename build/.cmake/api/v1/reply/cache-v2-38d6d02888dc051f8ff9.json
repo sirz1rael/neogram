@@ -1702,6 +1702,18 @@
 			"value" : "/usr/bin/pkg-config"
 		},
 		{
+			"name" : "Td_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "The directory containing a CMake configuration file for Td."
+				}
+			],
+			"type" : "PATH",
+			"value" : "/usr/local/lib/cmake/Td"
+		},
+		{
 			"name" : "__pkg_config_arguments_GTKMM",
 			"properties" : 
 			[
@@ -2024,42 +2036,6 @@
 			],
 			"type" : "INTERNAL",
 			"value" : "/usr/lib"
-		},
-		{
-			"name" : "tg_gtk4_BINARY_DIR",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Value Computed by CMake"
-				}
-			],
-			"type" : "STATIC",
-			"value" : "/home/t0kkaaa/projects/tg_gtk4/build"
-		},
-		{
-			"name" : "tg_gtk4_IS_TOP_LEVEL",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Value Computed by CMake"
-				}
-			],
-			"type" : "STATIC",
-			"value" : "ON"
-		},
-		{
-			"name" : "tg_gtk4_SOURCE_DIR",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Value Computed by CMake"
-				}
-			],
-			"type" : "STATIC",
-			"value" : "/home/t0kkaaa/projects/tg_gtk4"
 		}
 	],
 	"kind" : "cache",
