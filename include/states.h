@@ -1,7 +1,7 @@
 #pragma once
 
 enum class ClientState {
-    UNAUTHORIZED,
-    AUTHORIZED
-    //... idk
+  UNAUTHORIZED,
+  AUTHORIZED
+  //... idk
 };

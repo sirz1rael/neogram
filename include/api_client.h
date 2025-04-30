@@ -4,8 +4,6 @@
 
 class ApiClient {
 public:
-
-
 private:
-    ClientState current_client_state = ClientState::UNAUTHORIZED;
+  ClientState current_client_state = ClientState::UNAUTHORIZED;
 };
