@@ -1,9 +1,9 @@
 #pragma once
 
+#include <gtkmm/applicationwindow.h>
 #include <gtkmm/headerbar.h>
-#include <gtkmm/window.h>
 
-class MainWindow : public Gtk::Window {
+class MainWindow : public Gtk::ApplicationWindow {
 public:
   MainWindow();
   ~MainWindow() override;
@@ -13,7 +13,7 @@ protected:
 
 private:
   struct {
-    int width = 600;
-    int height = 400;
+    int width = 800;
+    int height = 600;
   } wndSize;
 };

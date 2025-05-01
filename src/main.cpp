@@ -1,23 +1,15 @@
 
-#include "enums.h"
-#include "login_window.h"
-#include "main_window.h"
+#include "app.h"
 
 #include <gtkmm.h>
 
 #include <cstdlib>
+#include <gtkmm/object.h>
+#include <memory>
 
 int main(int argc, char *argv[]) {
+  std::shared_ptr<Application> application = std::make_shared<Application>();
 
-  auto app = Gtk::Application::create("org.neogram");
-
-  auto windowState =
-      ClientState::UNAUTHORIZED; // Temporary placeholder for authorization :D
-
-  switch (windowState) {
-  case ClientState::AUTHORIZED:
-    return app->make_window_and_run<MainWindow>(argc, argv);
-  case ClientState::UNAUTHORIZED:
-    return app->make_window_and_run<LoginWindow>(argc, argv);
-  }
+  application->init("org.neogram");
+  application->run(argc, argv);
 }

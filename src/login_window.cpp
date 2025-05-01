@@ -1,8 +1,13 @@
 #include "login_window.h"
+#include "countries.h"
 #include "enums.h"
 #include "extra.h"
+#include "main_window.h"
 #include <exception>
 #include <glib.h>
+#include <glibmm/ustring.h>
+#include <gtkmm/application.h>
+#include <gtkmm/applicationwindow.h>
 #include <gtkmm/button.h>
 #include <gtkmm/enums.h>
 #include <gtkmm/label.h>
@@ -40,6 +45,17 @@ LoginWindow::LoginWindow() {
       [this]() { this->change_page(Pages::MAIN_LOGIN_PAGE); });
 
   back_btn->set_visible(current_page != Pages::MAIN_LOGIN_PAGE);
+
+  verify_button->signal_clicked().connect([this]() {
+    // Заглушка для имитации успешной авторизации
+    bool auth_success = check_credentials();
+
+    if (auth_success) {
+      on_login_success();
+    } else {
+      //..
+    }
+  });
 
   set_title("Neogram WIP");
   set_titlebar(w_headerbar);
@@ -96,6 +112,7 @@ void LoginWindow::load_widgets() {
   next_button = this->get_widget<Gtk::Button>("next_button");
   qr_button = this->get_widget<Gtk::Button>("qr_button");
   main_stack = this->get_widget<Gtk::Stack>("main_stack");
+  verify_button = this->get_widget<Gtk::Button>("verify_button");
 
   back_btn = Gtk::make_managed<Gtk::Button>();
   back_btn->set_icon_name("go-previous-symbolic");
@@ -117,7 +134,26 @@ void LoginWindow::load_widgets() {
   // ...
 
   // WIP: Phone codes depending on country
-  // ...
+  // Ready: Loading data from the json in a separate thread.
+  // TODO(): determine country by ip using tdlib & when definition successfully
+  // replace the icon with the country phone code similarly when the user
+  // selects his country. And all of it in separate thread.
+
+  m_loader.get_dispatcher().connect([this] {
+    if (m_loader.has_error()) {
+      Gtk::MessageDialog dialog(*this, "Error loading countries");
+      dialog.show();
+      return;
+    }
+    auto menu = Gio::Menu::create();
+    for (const auto &[name, code] : m_loader.get_data()) {
+      menu->append(name + " (" + code + ")", "country." + code);
+    }
+
+    country_button->set_menu_model(menu);
+  });
+
+  m_loader.load_async("countries.json");
 
   // WIP: Theme button, just for sexy look
   theme_btn = Gtk::make_managed<Gtk::Button>();
@@ -153,3 +189,17 @@ void LoginWindow::change_page(Pages next_page) {
     g_critical("Page %s not found in stack!", page_name);
   }
 }
+
+void LoginWindow::on_login_success() {
+  auto app = this->get_application();
+
+  main_window = Gtk::make_managed<MainWindow>();
+  app->add_window(*main_window);
+
+  main_window->present();
+
+  this->close();
+  //..
+}
+
+bool LoginWindow::check_credentials() { return true; }
