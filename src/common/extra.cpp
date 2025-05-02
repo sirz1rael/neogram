@@ -1,7 +1,9 @@
-#include "extra.h"
+#include "common/extra.h"
 
 #include <cstdlib>
+#include <glib.h>
 #include <iostream>
+#include <regex>
 
 Glib::RefPtr<Gtk::Builder> Extra::load_builder(const std::string &ui_path) {
   try {
@@ -25,4 +27,19 @@ Glib::RefPtr<Gtk::CssProvider> Extra::load_styles(std::string path_to_file) {
       GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
 
   return this->css_provider;
+}
+
+std::vector<std::string> Extra::split(const std::string &str) {
+  std::istringstream iss(str);
+  std::vector<std::string> tokens;
+  std::string token;
+  while (iss >> token) {
+    tokens.push_back(token);
+  }
+  return tokens;
+}
+
+bool Extra::is_phone_valid(const std::string &phone_number) {
+  std::regex pattern(R"(^\+?[0-9]+$)");
+  return !std::regex_match(phone_number, pattern);
 }

@@ -1,4 +1,4 @@
-#include "main_window.h"
+#include "windows/main_window.h"
 
 MainWindow::MainWindow() {
   set_title("Neogram <ALPHA> AUTHORIZED");

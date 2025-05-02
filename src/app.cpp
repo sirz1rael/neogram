@@ -1,5 +1,5 @@
 #include "app.h"
-#include "login_window.h"
+#include "windows/login_window.h"
 
 void Application::init(std::string app_id) { this->create(app_id); }
 

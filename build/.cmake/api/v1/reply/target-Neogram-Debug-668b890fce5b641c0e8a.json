@@ -343,7 +343,9 @@
 				3,
 				4,
 				5,
-				6
+				6,
+				7,
+				8
 			]
 		}
 	],
@@ -601,7 +603,9 @@
 				3,
 				4,
 				5,
-				6
+				6,
+				7,
+				8
 			]
 		}
 	],
@@ -610,7 +614,7 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "src/api_client.cpp",
+			"path" : "src/api/api_client.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
@@ -622,19 +626,13 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "src/countries.cpp",
+			"path" : "src/common/extra.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "src/extra.cpp",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "src/login_window.cpp",
+			"path" : "src/country_loader.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
@@ -646,7 +644,25 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "src/main_window.cpp",
+			"path" : "src/windows/login_window.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/windows/main_window.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/windows/settings_window.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/windows/window_manager.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],

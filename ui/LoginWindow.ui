@@ -43,8 +43,7 @@
                         <property name="css-classes">combo-box</property>
                         <child>
                           <object class="GtkMenuButton" id="country_button">
-                            <property name="label">Country</property>
-                            <property name="icon-name">globe-symbolic</property>
+                            <property name="label">Select country</property>
                             <property name="css-classes">combo-button</property>
                           </object>
                         </child>
