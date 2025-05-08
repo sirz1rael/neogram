@@ -8,5 +8,5 @@ public:
   ~Application() = default;
 
   void init(std::string app_id);
-  void run(int argc, char *argv[]);
+  int run(int argc, char *argv[]);
 };

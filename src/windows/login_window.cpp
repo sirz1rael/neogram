@@ -1,9 +1,11 @@
 #include "windows/login_window.h"
+#include "api/auth_manager.h"
 #include "common/enums.h"
 #include "common/extra.h"
 #include "country_loader.h"
 #include "windows/main_window.h"
 #include <exception>
+#include <future>
 #include <giomm/action.h>
 #include <giomm/actiongroup.h>
 #include <giomm/actionmap.h>
@@ -31,8 +33,14 @@
 #include <iostream>
 #include <memory>
 #include <sigc++/functors/mem_fun.h>
+#include <thread>
+
+#include "api/api_client.h"
 
 LoginWindow::LoginWindow() {
+  auth_manager_ = std::make_shared<AuthManager>();
+  api_client_ = std::make_unique<ClientApi>();
+
   std::unique_ptr<Extra> extra = std::make_unique<Extra>();
 
   this->builder = extra->load_builder("ui/LoginWindow.ui");
@@ -68,17 +76,16 @@ LoginWindow::LoginWindow() {
   add_action(action);
 
   next_button->signal_clicked().connect([this, &extra]() {
-    if (extra->is_phone_valid(phone_number->get_text()) ||
+    if (!extra->is_phone_valid(phone_number->get_text()) ||
         is_country_selected == false) {
       auto dialog = Gtk::AlertDialog::create("Phone number is incorrect!");
       dialog->show(*this);
       return;
     } else {
       phone_number_to_login =
-          extra->split(this->country_name)[1] + "-" + phone_number->get_text();
-      std::cout << phone_number_to_login << std::endl;
+          extra->split(this->country_name)[1] + phone_number->get_text();
     }
-    this->change_page(PageTypes::TWO_FACTOR_LOGIN_PAGE);
+    //.. there will be auth flow TODO():
   });
   qr_button->signal_clicked().connect(
       [this]() { this->change_page(PageTypes::QR_LOGIN_PAGE); });
@@ -107,13 +114,13 @@ LoginWindow::LoginWindow() {
 LoginWindow::~LoginWindow() = default;
 
 void LoginWindow::toggle_theme() {
-  m_dark_theme = !m_dark_theme;
+  is_dark_theme_on = !is_dark_theme_on;
 
   settings = Gtk::Settings::get_default();
-  settings->property_gtk_application_prefer_dark_theme() = m_dark_theme;
+  settings->property_gtk_application_prefer_dark_theme() = is_dark_theme_on;
 
-  theme_btn->set_icon_name(m_dark_theme ? "weather-clear-symbolic"
-                                        : "weather-clear-night-symbolic");
+  theme_btn->set_icon_name(is_dark_theme_on ? "weather-clear-symbolic"
+                                            : "weather-clear-night-symbolic");
 }
 
 void LoginWindow::get_ui_window() {

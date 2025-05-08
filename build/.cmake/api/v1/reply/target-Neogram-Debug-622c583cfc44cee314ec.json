@@ -38,25 +38,25 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 31,
+				"line" : 25,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 28,
+				"line" : 22,
 				"parent" : 0
 			},
 			{
 				"command" : 2,
 				"file" : 0,
-				"line" : 41,
+				"line" : 34,
 				"parent" : 0
 			},
 			{
 				"command" : 6,
 				"file" : 0,
-				"line" : 25,
+				"line" : 19,
 				"parent" : 0
 			},
 			{
@@ -100,6 +100,18 @@
 			{
 				"command" : 7,
 				"file" : 2,
+				"line" : 153,
+				"parent" : 11
+			},
+			{
+				"command" : 7,
+				"file" : 2,
+				"line" : 145,
+				"parent" : 11
+			},
+			{
+				"command" : 7,
+				"file" : 2,
 				"line" : 129,
 				"parent" : 11
 			},
@@ -118,6 +130,12 @@
 			{
 				"command" : 7,
 				"file" : 2,
+				"line" : 161,
+				"parent" : 11
+			},
+			{
+				"command" : 7,
+				"file" : 2,
 				"line" : 61,
 				"parent" : 11
 			},
@@ -130,7 +148,7 @@
 			{
 				"command" : 11,
 				"file" : 0,
-				"line" : 35,
+				"line" : 29,
 				"parent" : 0
 			}
 		]
@@ -144,11 +162,11 @@
 					"fragment" : "-g -std=c++17"
 				},
 				{
-					"backtrace" : 16,
+					"backtrace" : 19,
 					"fragment" : "-Wall"
 				},
 				{
-					"backtrace" : 16,
+					"backtrace" : 19,
 					"fragment" : "-Wextra"
 				},
 				{
@@ -171,12 +189,8 @@
 			"includes" : 
 			[
 				{
-					"backtrace" : 17,
+					"backtrace" : 20,
 					"path" : "/home/t0kkaaa/projects/tg_gtk4/include"
-				},
-				{
-					"backtrace" : 17,
-					"path" : "/home/t0kkaaa/projects/tg_gtk4/include/nlohmann"
 				},
 				{
 					"backtrace" : 3,
@@ -327,11 +341,6 @@
 					"backtrace" : 3,
 					"isSystem" : true,
 					"path" : "/usr/include/sysprof-6"
-				},
-				{
-					"backtrace" : 3,
-					"isSystem" : true,
-					"path" : "/.."
 				}
 			],
 			"language" : "CXX",
@@ -369,31 +378,6 @@
 			},
 			{
 				"fragment" : "-Wl,-rpath,/usr/local/lib",
-				"role" : "libraries"
-			},
-			{
-				"backtrace" : 3,
-				"fragment" : "/usr/local/lib/libtdjson.so.1.8.47",
-				"role" : "libraries"
-			},
-			{
-				"backtrace" : 3,
-				"fragment" : "/usr/local/lib/libtdcore.a",
-				"role" : "libraries"
-			},
-			{
-				"backtrace" : 3,
-				"fragment" : "/usr/local/lib/libtdutils.a",
-				"role" : "libraries"
-			},
-			{
-				"backtrace" : 3,
-				"fragment" : "/usr/local/lib/libtdactor.a",
-				"role" : "libraries"
-			},
-			{
-				"backtrace" : 3,
-				"fragment" : "/usr/local/lib/libtdclient.a",
 				"role" : "libraries"
 			},
 			{
@@ -517,62 +501,67 @@
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 3,
-				"fragment" : "/usr/local/lib/libtdcore.a",
-				"role" : "libraries"
-			},
-			{
 				"backtrace" : 12,
-				"fragment" : "/usr/local/lib/libtddb.a",
+				"fragment" : "/usr/local/lib/libtdclient.a",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 13,
-				"fragment" : "/usr/local/lib/libtdsqlite.a",
+				"fragment" : "/usr/local/lib/libtdcore.a",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 12,
-				"fragment" : "/usr/local/lib/libtde2e.a",
-				"role" : "libraries"
-			},
-			{
-				"backtrace" : 12,
-				"fragment" : "/usr/local/lib/libtdmtproto.a",
-				"role" : "libraries"
-			},
-			{
-				"backtrace" : 12,
-				"fragment" : "/usr/local/lib/libtdnet.a",
-				"role" : "libraries"
-			},
-			{
-				"backtrace" : 3,
-				"fragment" : "/usr/local/lib/libtdactor.a",
-				"role" : "libraries"
-			},
-			{
-				"backtrace" : 14,
-				"fragment" : "/usr/lib/libssl.so",
-				"role" : "libraries"
-			},
-			{
-				"backtrace" : 12,
+				"backtrace" : 13,
 				"fragment" : "/usr/local/lib/libtdapi.a",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 3,
+				"backtrace" : 14,
+				"fragment" : "/usr/local/lib/libtddb.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 15,
+				"fragment" : "/usr/local/lib/libtdsqlite.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 14,
+				"fragment" : "/usr/local/lib/libtde2e.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 14,
+				"fragment" : "/usr/local/lib/libtdmtproto.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 14,
+				"fragment" : "/usr/local/lib/libtdnet.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 16,
+				"fragment" : "/usr/lib/libssl.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 14,
+				"fragment" : "/usr/local/lib/libtdactor.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 17,
 				"fragment" : "/usr/local/lib/libtdutils.a",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 15,
+				"backtrace" : 18,
 				"fragment" : "/usr/lib/libcrypto.so",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 15,
+				"backtrace" : 18,
 				"fragment" : "/usr/lib/libz.so",
 				"role" : "libraries"
 			},
@@ -620,6 +609,12 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
+			"path" : "src/api/auth_manager.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
 			"path" : "src/app.cpp",
 			"sourceGroupIndex" : 0
 		},
@@ -657,12 +652,6 @@
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "src/windows/settings_window.cpp",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "src/windows/window_manager.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],

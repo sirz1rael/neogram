@@ -8,16 +8,10 @@ set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -lc++ -lc++abi")
 set(CMAKE_CXX_EXTENSIONS OFF)
 add_compile_options(-Wall -Wextra)
 
-file(GLOB_RECURSE SOURCES "src/*.cpp")
+file(GLOB_RECURSE SOURCES CMAKE_CONFIGURE_DEPENDS "src/*.cpp")
 file(GLOB_RECURSE HEADERS "include/*.h" "include/*.hpp")
 
-find_package(Td 1.8.47 REQUIRED COMPONENTS 
-    tdjson 
-    tdcore
-    tdclient
-    tdactor
-    tdutils
-)
+find_package(Td 1.8.48 REQUIRED)
 
 find_package(CURL REQUIRED)
 
@@ -35,18 +29,13 @@ add_executable(${PROJECT_NAME}
 target_include_directories(${PROJECT_NAME}
     PUBLIC 
         ${PROJECT_SOURCE_DIR}/include
-        ${PROJECT_SOURCE_DIR}/include/nlohmann
 )
 
 target_link_libraries(${PROJECT_NAME}
     PRIVATE 
         PkgConfig::GTKMM 
     PRIVATE
-        Td::tdjson
-        Td::tdcore
-        Td::tdutils
-        Td::tdactor
-        Td::tdclient
+        Td::TdStatic
         pthread
         dl
         ssl

@@ -1,5 +1,7 @@
 #pragma once
 
+#include "api/api_client.h"
+#include "api/auth_manager.h"
 #include "common/enums.h"
 #include "country_loader.h"
 #include <glibmm/refptr.h>
@@ -11,6 +13,7 @@
 #include <gtkmm/button.h>
 #include <gtkmm/menubutton.h>
 #include <gtkmm/window.h>
+#include <memory>
 
 class LoginWindow : public Gtk::ApplicationWindow {
 public:
@@ -43,7 +46,7 @@ protected:
   void get_ui_window();
 
   void toggle_theme();
-  bool m_dark_theme = false;
+  bool is_dark_theme_on = false;
 
   PageTypes current_page = PageTypes::MAIN_LOGIN_PAGE;
   void change_page(const PageTypes &next_page);
@@ -57,4 +60,7 @@ protected:
   std::string phone_number_to_login{};
   Glib::ustring country_name;
   bool is_country_selected = false;
+
+  std::unique_ptr<ClientApi> api_client_;
+  std::shared_ptr<AuthManager> auth_manager_;
 };

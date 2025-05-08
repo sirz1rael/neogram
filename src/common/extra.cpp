@@ -41,5 +41,5 @@ std::vector<std::string> Extra::split(const std::string &str) {
 
 bool Extra::is_phone_valid(const std::string &phone_number) {
   std::regex pattern(R"(^\+?[0-9]+$)");
-  return !std::regex_match(phone_number, pattern);
+  return std::regex_match(phone_number, pattern);
 }
